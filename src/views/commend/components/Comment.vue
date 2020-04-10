@@ -1,6 +1,5 @@
 <template>
   <div class="component-wrapper" >
-    <scroll class="scroll">
       <div class="component" v-for="(rating,index) of ratings" :key="index" v-show="needShow(rating.rateType,rating.text)">
         <div class="rating-top">
           <div class="avatar">
@@ -26,7 +25,6 @@
           </span>
         </div>
       </div>
-    </scroll>
   </div>
 </template>
 
@@ -34,14 +32,13 @@
 import star from '@/components/common/start/Start.vue'
 import { formaDate, formaDate1} from '@/common/utils.js'
 
-import Scroll from '@/components/common/bscroll/BScroll.vue'
 
 export default {
   name:'Compoent',
   props:['ratings','selectType','onlyContent'],
   components:{
     star,
-    Scroll
+    
   },
   methods: {
     needShow(type,text){
@@ -67,12 +64,10 @@ export default {
 
 <style scoped>
 .component-wrapper{
-  height: 206px;
+  height: 50%;
   overflow: hidden;
 }
-.scroll{
-  height: 100%;
-}
+
 .component{
   padding: 18px;
 }

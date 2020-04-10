@@ -1,17 +1,21 @@
 <template>
   <div class="commonend">
     <!-- {{seller}} -->
-    <com-head :seller="seller"></com-head>
-    <Split></Split>
-    <Rating
-      :select-type="selectType"
-      :only-content="onlyContent"
-      :desc="desc"
-      :ratings="ratings"
-      @set="setType"
-      @toggle="toggle"
-    ></Rating>
-      <comment :ratings="ratings" :only-content="onlyContent" :select-type="selectType"> </comment>
+    <scroll class="scroll">
+    
+      <com-head :seller="seller"></com-head>
+      <Split></Split>
+      <Rating
+        :select-type="selectType"
+        :only-content="onlyContent"
+        :desc="desc"
+        :ratings="ratings"
+        @set="setType"
+        @toggle="toggle"
+      ></Rating>
+        <comment :ratings="ratings" :only-content="onlyContent" :select-type="selectType"> </comment>
+    </scroll>
+    
   </div>
  
 </template>
@@ -21,6 +25,8 @@ import ComHead from './components/Head.vue'
 import Split from '@/views/foodDetail/components/Split.vue'
 import Rating from '@/views/foodDetail/components/Rating.vue'
 import Comment from './components/Comment.vue'
+import Scroll from '@/components/common/bscroll/BScroll.vue'
+
 export default {
   name: 'Common',
   props:['seller','ratings'],
@@ -28,7 +34,8 @@ export default {
     ComHead,
     Split,
     Rating,
-    Comment
+    Comment,
+    Scroll
   },
   data(){
     return {
@@ -57,9 +64,12 @@ export default {
 .commonend{
   position: absolute;
   top: 174px;
-  bottom: 0;
+  bottom: 50px;
   left: 0;
   right: 0;
   overflow: hidden;
+}
+.scroll{
+  height: 100%;
 }
 </style>

@@ -158,7 +158,7 @@ export default {
   right: 0;
   bottom:46px;
   overflow: hidden;
-  background-color: #ccc;
+  background-color: #fff;
 }
 .goods .menu-wrapper{
   flex: 0 0 80px;
@@ -185,7 +185,7 @@ export default {
   height: 54px;
   margin:  auto;  
   font-size: 12px;
-  box-shadow: 0 -1px 1px rgba(7,17,27,.1)
+  
 }
 .goods .menu-wrapper .menu-item .text-span{
   display: table-cell;
